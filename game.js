@@ -1,4 +1,3 @@
-
 var buttonColors = ["red", "blue", "green", "yellow"];
 
 //The array that stores the random sequence that is the correct
@@ -57,24 +56,23 @@ function animatePress(currentColor) {
 function checkAnswer(lastColor) {
   if (gamePattern.length === userClickedPattern.length) {
     if (userClickedPattern[userClickedPattern.length - 1] === gamePattern[userClickedPattern.length - 1]) {
-      setTimeout(function(){
+      setTimeout(function() {
         nextSequence();
-      },1000);
+      }, 1000);
       userClickedPattern = [];
-    }else{
+    } else {
       gameOver();
     }
 
   } else {
-    if (userClickedPattern[userClickedPattern.length - 1] === gamePattern[userClickedPattern.length - 1]){
-    }else{
+    if (userClickedPattern[userClickedPattern.length - 1] === gamePattern[userClickedPattern.length - 1]) {} else {
       gameOver();
     }
   }
 }
 
 //gameOver resets the game and plays the animations/sounds for when the game is over.
-function gameOver(){
+function gameOver() {
   userClickedPattern = [];
   gameStarted = false;
   gamePattern = [];
@@ -83,7 +81,7 @@ function gameOver(){
   wrongSound.play();
   $("h1").text("Game over, Press Any Key to Restart!")
   $("body").addClass("game-over");
-  setTimeout(function(){
+  setTimeout(function() {
     $("body").removeClass("game-over");
   }, 200);
 };
