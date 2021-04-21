@@ -19,6 +19,14 @@ $(document).keydown(function() {
     gameStarted = true;
   }
 })
+$("#level-title").click(function() {
+  if (!gameStarted) {
+    nextSequence();
+    gameStarted = true;
+  }else{
+    console.log("test");
+  }
+})
 
 // This is the next sequence everytime the play begins or moves to the next level
 function nextSequence() {
