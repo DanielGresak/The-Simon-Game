@@ -57,19 +57,16 @@ function animatePress(currentColor) {
 function checkAnswer(lastColor) {
   if (gamePattern.length === userClickedPattern.length) {
     if (userClickedPattern[userClickedPattern.length - 1] === gamePattern[userClickedPattern.length - 1]) {
-      console.log("Success");
       setTimeout(function(){
         nextSequence();
       },1000);
       userClickedPattern = [];
     }else{
-      console.log("wrong2");
       gameOver();
     }
 
   } else {
     if (userClickedPattern[userClickedPattern.length - 1] === gamePattern[userClickedPattern.length - 1]){
-      console.log("yes");
     }else{
       gameOver();
     }
