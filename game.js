@@ -23,7 +23,7 @@ $("#level-title").click(function() {
   if (!gameStarted) {
     nextSequence();
     gameStarted = true;
-  }else{
+  } else {
     console.log("test");
   }
 })
@@ -71,7 +71,6 @@ function checkAnswer(lastColor) {
     } else {
       gameOver();
     }
-
   } else {
     if (userClickedPattern[userClickedPattern.length - 1] === gamePattern[userClickedPattern.length - 1]) {} else {
       gameOver();
@@ -94,13 +93,18 @@ function gameOver() {
   }, 200);
 };
 
-
-var windowSize = $(window).width();
-function mobile(){
-
-  if(windowSize < 700){
+//Making the game mobile friendly
+function mobile() {
+  if (screen.width < 700) {
     $("#level-title").text("Game over, Tap Here to Restart!")
-  }else{
+  } else {
     $("#level-title").text("Game over, Press Any Key to Restart!")
   }
 }
+(function() {
+  if (screen.width < 700) {
+    $("#level-title").text("Welcome! Tap Here to Start")
+  } else {
+    $("#level-title").text("Welcome! Press Any Key to Start")
+  }
+})();
