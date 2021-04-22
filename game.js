@@ -87,9 +87,20 @@ function gameOver() {
   level = 0;
   var wrongSound = new Audio("sounds/wrong.mp3");
   wrongSound.play();
-  $("h1").text("Game over, Press Any Key to Restart!")
+  mobile();
   $("body").addClass("game-over");
   setTimeout(function() {
     $("body").removeClass("game-over");
   }, 200);
 };
+
+
+var windowSize = $(window).width();
+function mobile(){
+
+  if(windowSize < 700){
+    $("#level-title").text("Game over, Tap Here to Restart!")
+  }else{
+    $("#level-title").text("Game over, Press Any Key to Restart!")
+  }
+}
